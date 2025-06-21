@@ -1,0 +1,29 @@
+{
+  "name": "yandex-search-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Yandex search API",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node --no-warnings --loader ts-node/esm -e \"import { chmodSync } from 'fs'; chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js",
+    "dev": "tsc --watch & nodemon build/index.js",
+    "test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' mocha test/**/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.3",
+    "@types/xml2js": "^0.4.14",
+    "chai": "^5.2.0",
+    "mocha": "^11.7.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}
